@@ -38,7 +38,11 @@ public class StripePaymentService : IPaymentService
             
             var options = new SessionCreateOptions
             {
-                PaymentMethodTypes = new List<string> { "card" },
+                PaymentMethodTypes = new List<string> 
+                { 
+                    "card",             // Creditcards
+                    "bancontact",       // Bancontact (populair in België)
+                },
                 LineItems = new List<SessionLineItemOptions>
                 {
                     new SessionLineItemOptions
